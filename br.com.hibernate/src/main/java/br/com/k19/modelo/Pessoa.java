@@ -10,14 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Lob;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE) //Heranca, probelma que se criar uma unica tabela e que para determinados registros nao sterao colunas utilzadas
 //@Inheritance(strategy=InheritanceType.JOINED) //AS subclasses terao suas proprias tabelas com seus atribuitos e a a fk da superclasse
 //@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS) // as tabelas filhas terao o registro da tabela pai, mas sem nenhum fk
+@NamedQueries({
+	@NamedQuery(name="Pessoa.findAll", query="SELECT p FROM Pessoa p"),
+	@NamedQuery(name="Pessoa.count", query="SELECT COUNT(p) FROM Pessoa p"),
+	@NamedQuery(name="Pessoa.findById", query="SELECT p FROM Pessoa p WHERE p.id = :id"),
+	@NamedQuery(name="Pessoa.findByIdade", query="SELECT P FROM Pessoa p WHERE p.idade > ?1")
+})
 public class Pessoa {
 	
 	@Id @GeneratedValue
@@ -38,7 +45,7 @@ public class Pessoa {
 //	@Embedded
 	private Endereco endereco;
 	
-	@Transient
+	//@Transient
 	private int idade;
 
 	public Long getId() {
