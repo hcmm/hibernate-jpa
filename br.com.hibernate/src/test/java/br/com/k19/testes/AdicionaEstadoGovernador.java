@@ -5,7 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.com.k19.modelo.Estado;
-import br.com.k19.modelo.Governador;
 
 public class AdicionaEstadoGovernador {
 	

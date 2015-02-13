@@ -1,5 +1,6 @@
 package br.com.k19.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ public class Estado {
 	@GeneratedValue
 	private Long id;
 	
-	@OneToOne(optional=false, fetch=FetchType.LAZY) //exige que o estado possua um governador, OnetoOne por padrao eh eager
+	@OneToOne(optional=false, fetch=FetchType.LAZY, cascade=CascadeType.PERSIST) //exige que o estado possua um governador, OnetoOne por padrao eh eager
 	@JoinColumn(name="gov_id") //alterando o nome da join column
 	private Governador governador;
 	
