@@ -27,6 +27,8 @@ public class Livro {
 	
 	private Blob arquivo;
 
+	private String nome;
+
 	public Long getId() {
 		return id;
 	}
@@ -50,6 +52,10 @@ public class Livro {
 
 	public void setAutores(Collection<Autor> autores) {
 		this.autores = autores;
+	}
+
+	public String getNome() {
+		return this.nome;
 	}
 	
 	
