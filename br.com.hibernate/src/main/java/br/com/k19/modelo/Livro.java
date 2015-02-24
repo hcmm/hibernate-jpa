@@ -31,6 +31,8 @@ public class Livro {
 	
 	private Double preco;
 
+	private String nome;
+
 	public Long getId() {
 		return id;
 	}
@@ -66,6 +68,7 @@ public class Livro {
 		this.autores = autores;
 	}
 
+<<<<<<< HEAD
 	public Double getPreco() {
 		return preco;
 	}
@@ -73,6 +76,20 @@ public class Livro {
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
+=======
+	public String getNome() {
+		return this.nome;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+>>>>>>> branch 'master' of https://github.com/hcmm/hibernate-jpa.git
 	
 
 }

@@ -39,7 +39,7 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			
 <!-- 			<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/> -->
-
+			<property name="javax.persistence.validation.group.pre-persist" value="javax.validation.groups.Default"/>
 		</properties>
 	</persistence-unit>
 </persistence>

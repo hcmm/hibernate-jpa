@@ -14,6 +14,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE) //Heranca, probelma que se criar uma unica tabela e que para determinados registros nao sterao colunas utilzadas
@@ -31,6 +32,7 @@ public class Pessoa {
 	private Long id;
 	
 	@Column(length=30, nullable=false, unique=true)
+	@NotNull
 	private String nome;
 	
 	@Column(precision=3, scale=2)
