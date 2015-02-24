@@ -19,6 +19,8 @@ public class Livro {
 	@GeneratedValue
 	private Long id;
 	
+	private String nome;
+	
 	@ManyToMany
 	@JoinTable(name="Liv_Aut",
 		joinColumns=@JoinColumn(name="Liv_ID"),
@@ -26,6 +28,8 @@ public class Livro {
 	private Collection<Autor> autores;
 	
 	private Blob arquivo;
+	
+	private Double preco;
 
 	public Long getId() {
 		return id;
@@ -33,6 +37,16 @@ public class Livro {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Collection<Autor> getAutores() {
@@ -51,15 +65,14 @@ public class Livro {
 	public void setAutores(Collection<Autor> autores) {
 		this.autores = autores;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
 	
 
 }
